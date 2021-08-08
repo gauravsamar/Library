@@ -11,15 +11,6 @@ import datetime
 
 # HOME PAGE
 def index(request):
-    message = "You have issued from library"
-    send_mail(
-    'Issue Form',
-    message,
-    settings.EMAIL_HOST_USER,
-    ['gaurav.samar2000@gmail.com'],
-    fail_silently= False
-    )
- 
     return render(request,'index.html')
 
 
