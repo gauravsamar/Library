@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-
+from django.core.mail import send_mail
+from django.conf import settings
 from .models import *
 from .forms import *
 # .FORMS REFERS TO THE FORMS.PY IN CURRENT DIRECTORY AND * USED FOR IMPORTING EVERYTHING
@@ -10,10 +11,16 @@ import datetime
 
 # HOME PAGE
 def index(request):
-    return render(
-        request,
-        'index.html',
+    message = "You have issued from library"
+    send_mail(
+    'Issue Form',
+    message,
+    settings.EMAIL_HOST_USER,
+    ['gaurav.samar2000@gmail.com'],
+    fail_silently= False
     )
+ 
+    return render(request,'index.html')
 
 
 # VIEW THAT WILL RETURN LIST OF ALL BOOKS IN LIBRARY
@@ -93,7 +100,7 @@ def student_request_issue(request, pk):
     stu=Student.objects.get(roll_no=123)
     s = get_object_or_404(Student, roll_no=123)
     if s.total_books_due < 10:
-        message = "book has been issued, You can collect book from library"
+        message = "Book has been issued, You can collect book from library"
         a = Borrower()
         a.student = s
         a.book = obj
@@ -104,7 +111,7 @@ def student_request_issue(request, pk):
         stu.save()
         a.save()
     else:
-        message = "you have exceeded limit."
+        message = "You have exceeded limit."
     return render(request, 'catalog/result.html', locals())
 
 
