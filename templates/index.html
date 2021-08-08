@@ -1,0 +1,48 @@
+{% extends "base_generic.html" %}
+
+{% block jumbo %}
+<main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Hello,{{ request.user }}</h1>
+          <p>A library is a collection of materials, books or media that are easily accessible for use and not just for display purposes. It is responsible for housing updated information in order to meet the user's needs on a daily basis. A Library provides physical (hard copies documents) or digital access (soft copies) materials, and may be a physical location or a virtual space, or both. A library's collection can include printed materials and other physical resources in many formats such as DVDs, CDs and Cassette as well as access to information, music or other content held on bibliographic databases.</p>
+          <p><a class="btn btn-primary btn-lg" href="/books/" role="button">List of Books&raquo;</a></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Django</h2>
+            <p>Django is a Python-based free and open-source web framework that follows the model–template–views architectural pattern. It is maintained by the Django Software Foundation, an American independent organization established as a 501 non-profit. </p>
+            <p><a class="btn btn-secondary" href="https://docs.djangoproject.com/en/3.2/" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>MySQL</h2>
+            <p>MySQL is an open-source relational database management system. Its name is a combination of "My", the name of co-founder Michael Widenius's daughter, and "SQL", the abbreviation for Structured Query Language. </p>
+            <p><a class="btn btn-secondary" href="https://dev.mysql.com/doc/" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Crispy Forms</h2>
+            <p>Django-crispy-forms is an application that helps to manage Django forms. It allows adjusting forms' properties (such as method, send button or CSS classes) on the backend without having to re-write them in the template.</p>
+            <p><a class="btn btn-secondary" href="https://django-crispy-forms.readthedocs.io/en/latest/" role="button">View details &raquo;</a></p>
+          </div>
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+<footer class="container">
+    <p><center>Find us on <a href="https://www.linkedin.com/in/gaurav-samar-b15b3583/">Linkedin</a></center></p>
+      <p><center>&copy; Gaurav Samar</p></center>
+    </footer>
+
+{% endblock %}
+
+{% block content %}
+{% endblock %}
